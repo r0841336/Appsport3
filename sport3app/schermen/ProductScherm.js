@@ -14,10 +14,10 @@ const [products, getproducts] = useState([]);
         try {
             let url;
             if (Platform.OS == 'android'){
-                url = "http://10.0.2.2:32812/api/sport";
+                url = "http://10.0.2.2:32812/api/sport/";
             }
             else {
-                url = "http://sport3.ddev.site/api/sport";
+                url = "http://sport3.ddev.site/api/sport/";
               }
         
             const response = await fetch(url, {
@@ -37,8 +37,8 @@ const [products, getproducts] = useState([]);
         }, []);
 
         return (
-            <View>
-               <Text> Onze producten </Text>
+            <View style={styles.scherm}>
+               <Text style={styles.title}> Onze producten </Text>
                <FlatList
                data={products}
                keyExtractor={item => item.id}
@@ -49,6 +49,7 @@ const [products, getproducts] = useState([]);
               return <Product
                 id={item.id}
                 title={item.productTitle}
+                categorie={item.categorie}
                 price={item.price}
                 banner={item.bannerImg}
                 navigation={navigation}
@@ -60,6 +61,21 @@ const [products, getproducts] = useState([]);
          </View>
         );
     }
+
+
+    const styles = StyleSheet.create({
+        scherm: {
+            alignItems: 'center',
+            marginBottom: 60,
+        },
+
+        title: {
+            marginBottom: 20,
+            fontSize: 26,
+            fontWeight: 'bold',
+        },
+ 
+      });
 
     export default ProductScherm;
 
