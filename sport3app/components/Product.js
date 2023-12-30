@@ -8,7 +8,7 @@ const Product = props => {
         <Image
         style={styles.bannerImg}
           source={{
-            uri: props.bannerImg
+            uri: "props.bannerImg"
           }}
         />
         <Text style={styles.products}>{props.title}</Text>
