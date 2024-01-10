@@ -1,45 +1,45 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
-const Product = props => {
+const Product = ({ id, title, categorie, price, banner, navigation, onSelectArticle }) => {
   return (
-    <TouchableOpacity activeOpacity={0.5} onPress={() => props.onSelectArticle(props.id)}>
-      <View style={styles.kader}>
-        <Image
-        style={styles.bannerImg}
-          source={{
-            uri: "props.bannerImg"
-          }}
-        />
-        <Text style={styles.products}>{props.title}</Text>
-        <Text style={styles.products}>{props.categorie}</Text>
-        <Text style={styles.products}>€ {props.price}</Text>
+    <TouchableOpacity onPress={() => onSelectArticle(id)}>
+      <View style={styles.productContainer}>
+        <Image source={{ uri: banner }} style={styles.productImage} />
+        <Text style={styles.productTitle}>{title}</Text>
+        <Text style={styles.productCategory}>{categorie}</Text>
+        <Text style={styles.productPrice}>€ {price}</Text>
       </View>
-    </TouchableOpacity >
-
+    </TouchableOpacity>
   );
-}
+};
 
 const styles = StyleSheet.create({
-
-    bannerImg: {
-      height: 100,
-    },
-
-    products: {
-        textAlign: 'center',
-    },
-
-    kader: {
-        borderWidth: 1,
-        borderColor: 'gray',
-        borderRadius: 5,
-        padding: 10,
-        marginBottom: 20,
-
-    }
-
-  });
-
+  productContainer: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 5,
+    margin: 10,
+    padding: 10,
+    alignItems: 'center',
+  },
+  productImage: {
+    height: 150,
+    width: '70%', 
+    marginBottom: 10,
+  },
+  productTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  productCategory: {
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
+  productPrice: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
 
 export default Product;
