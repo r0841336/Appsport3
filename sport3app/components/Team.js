@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   teamlidImage: {
-    height: 150,
+    height: 200,
     width: '70%', 
   },
   teamlidTitle: {

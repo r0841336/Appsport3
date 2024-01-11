@@ -59,7 +59,7 @@ const [contact, getcontact] = useState([]);
             }
         }
         />
-                 <View style={styles.navigatie}>
+                       <View style={styles.navigatie}>
         <TouchableOpacity onPress={() => navigation.navigate('Contact')} style={styles.navItems}>
           <Text style={styles.navText}>Contact</Text>
         </TouchableOpacity>

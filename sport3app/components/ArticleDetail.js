@@ -34,7 +34,7 @@ const ArticleDetail = (props) => {
   }, []);
 
   const addToCart = () => {
-    console.log("Adding to cart:", article);
+    console.log("Adding to cart:", article.productTitle);
     setCart([...cart, article]);
     
   };
@@ -60,6 +60,7 @@ const ArticleDetail = (props) => {
         <Text style={styles.fulltekst}>{article.fullText}</Text>
       </View>
     </ScrollView>
+    
   );
 };
 

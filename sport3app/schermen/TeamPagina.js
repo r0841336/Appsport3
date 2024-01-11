@@ -43,18 +43,17 @@ const TeamlidPagina = ({ navigation }) => {
           }
           return (
             <Teamlid
-              id={item.id}
-              naam={item.naam}
-              email={item.email}
-              omschrijving={item.omschrijving}
-              banner={item.bannerImg}
-              navigation={navigation}
-            />
+            id={item.id}
+            naam={item.naam}
+            email={item.email}
+            omschrijving={item.omschrijving}
+            bannerImg={item.bannerImg} 
+            navigation={navigation}
+          />
           );
         }}
       />
-
-      <View style={styles.navigatie}>
+                             <View style={styles.navigatie}>
         <TouchableOpacity onPress={() => navigation.navigate('Contact')} style={styles.navItems}>
           <Text style={styles.navText}>Contact</Text>
         </TouchableOpacity>

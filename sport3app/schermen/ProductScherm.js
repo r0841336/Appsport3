@@ -48,7 +48,6 @@ const ProductScherm = ({ navigation }) => {
     <View style={styles.scherm}>
       <Text style={styles.title}>Onze producten</Text>
 
-
       <View style={styles.filterContainer}>
         <TouchableOpacity onPress={() => filterByCategory(null)} style={styles.filterButton}>
           <Text>Show All</Text>
@@ -64,7 +63,7 @@ const ProductScherm = ({ navigation }) => {
           </TouchableOpacity>
         ))}
       </View>
-
+    
       <FlatList
         data={filteredProducts}
         keyExtractor={(item) => item.id}
@@ -80,14 +79,15 @@ const ProductScherm = ({ navigation }) => {
               price={item.price}
               banner={item.bannerImg}
               navigation={navigation}
-              onSelectArticle={(selectedId) => {
-                navigation.navigate('Details', { id: selectedId });
-              }}
+           onSelectArticle={(selectedId) => {
+          navigation.navigate('Details', { id: selectedId });
+        }}
+              
             />
           );
         }}
       />
-                 <View style={styles.navigatie}>
+                       <View style={styles.navigatie}>
         <TouchableOpacity onPress={() => navigation.navigate('Contact')} style={styles.navItems}>
           <Text style={styles.navText}>Contact</Text>
         </TouchableOpacity>
@@ -102,7 +102,6 @@ const ProductScherm = ({ navigation }) => {
         </TouchableOpacity>
       </View>
          </View>
-         
         );
     }
 
